@@ -1,0 +1,296 @@
+/* CHALLENGE 04 — THE HAPPY CLUB: STUDENT CSS STARTER
+   Not a finished design. Follow CHALLENGE.md and references/.
+   Practice: form styles, layout, responsive CSS, :focus and :checked.
+*/
+:root {
+  --ink: #372A4E;
+  --purple: #5945B7;
+  --lilac: #E7DEFD;
+  --rose: #F9B6C7;
+  --paper: #FFFDF9;
+  --cream: #FFF9F0;
+  --muted: #796E86;
+  --line: #E7E1E9;
+  --yellow: #FCEB9D;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Trebuchet MS", Arial, sans-serif; background: var(--cream); color: var(--ink); }
+button, input, select { font: inherit; }
+a { color: inherit; }
+
+/* Already supplied: legible, usable one-column starting point */
+.site-header, .site-footer { 
+   max-width: 1200px;
+   margin: auto;
+   padding: 20px; }
+
+
+.site-header { 
+   display: flex;
+   justify-content: space-between;
+   gap: 12px;
+   align-items: center;
+   padding-top: 18px; }
+
+
+
+.brand {
+   font-weight: 800;
+   text-decoration: none;
+   font-size: 20px;
+   letter-spacing: -0.02em;
+   display: inline-flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+
+.page-layout {
+   max-width: 1200px;
+   padding: 12px 20px 28px;
+    margin: auto;
+   display: grid;
+   gap: 24px;
+   align-items: stretch;
+   grid-template-columns: 0.9fr 1fr;
+ }
+
+
+.welcome-panel, .form-panel { 
+   padding: 25px;
+   margin-bottom: 20px;
+   border-radius: 24px;
+   margin: 0;
+   }
+
+.welcome-panel {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--lilac); padding: 40px 36px 32px;
+}
+
+.form-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 36px 32px;
+  background-color: #FFFDF9;
+}
+.welcome-panel::before {
+  content: "";
+   position: absolute;
+    top: -130px;
+   right: -130px;
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   border: 2px dashed rgba(89, 69, 183, 0.25);
+    pointer-events: none;
+}
+
+.form-panel {
+  background: var(--paper); border: 1px solid var(--line);
+  box-shadow: 0 20px 50px rgba(55, 42, 78, 0.08);
+  padding: 40px 44px 36px;
+}
+
+.eyebrow {
+  margin: 0 0 28px; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; color: var(--purple);
+}
+
+.welcome-panel h1 {
+  margin: 0 0 22px; font-size: clamp(44px, 5vw, 66px);
+  line-height: 0.98; letter-spacing: -0.04em;
+}
+
+.welcome-panel h1 em { font-style: normal; color: var(--purple); }
+
+.welcome-description { margin: 0; max-width: 370px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+
+.club-artwork { 
+   display: block;
+   width: min(100%, 420px);
+   height: auto;
+  margin: 20px auto 0; }
+
+.welcome-footnote { margin: auto 0 0;
+   padding-top: 20px;
+    font-size: 12px;
+     font-weight: 700;
+      color: var(--muted); }
+
+
+.tiny-label {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 12px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--purple);
+}
+
+.tiny-label::before { content: "";
+   width: 9px; 
+   height: 9px;
+    border-radius: 50%;
+     background: var(--rose); }
+
+.form-panel h2 { margin: 0 0 8px;
+   font-size: clamp(30px, 3.2vw, 42px);
+    letter-spacing: -0.03em;
+     line-height: 1.1; }
+
+
+.form-intro { margin: 0 0 28px;
+   color: var(--muted);
+    font-size: 15px; }
+
+.form.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 20px;
+}
+
+.full-width { grid-column: 1 / -1; }
+
+.field {
+   margin-bottom: 16px;
+   margin: 0;
+   min-width: 0;}
+
+.field label, .vibe-group legend {
+  display: block;
+   margin-bottom: 8px;
+    padding: 0;
+  font-size: 11px;
+   font-weight: 800;
+    letter-spacing: 0.1em;
+     color: var(--ink);
+}
+
+.field input, .field select { display: block;
+   width: 100%;
+    max-width: 100%;
+     padding: 12px; 
+     font-size: 14px;
+     transition: border-color 0.15s;
+     border: 1px solid var(--line);
+      border-radius: 6px;
+    background: #fcfafe; }
+
+.field input::placeholder { color: #A097AD; }
+
+.field input:focus, .field select:focus {
+  outline: none; border-color: var(--purple); box-shadow: var(--focus-ring); background: #fff;
+}
+
+
+.field-hint { display: block;
+   margin-top: 5px;
+   font-size: 11px;
+    color: var(--muted); }
+
+
+.vibe-group { margin: 12px 0;
+   padding: 12px;
+   border: 0;
+   min-width: 0; }
+
+
+.vibe-options { display: grid;
+   grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+     margin: 0; }
+
+
+.vibe-option { position: relative;
+   display: block;
+    cursor: pointer; }
+
+
+.vibe-option input {
+  position: absolute;
+   inset: 0;
+   opacity: 0;
+   margin: 0;
+   cursor: pointer;
+}
+
+.vibe-option span {
+   display: flex;
+   align-items: center;
+    justify-content: center;
+    gap: 6px;
+   padding: 15px 10px;
+   font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+   background: #FCFAFE;
+   border: 1.5px solid var(--line);
+    border-radius: 12px;
+   transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+}
+
+
+.vibe-option:hover span { 
+   border-color: var(--purple);
+   transform: translateY(-1px); }
+
+
+.vibe-option input:checked + span { 
+   background: var(--lilac);
+   border-color: var(--purple);
+    color: var(--purple); }
+
+
+.vibe-option input:focus-visible + span { box-shadow: var(--focus-ring);
+   border-color: var(--purple); }
+
+
+.checkbox-line { display: flex;
+   gap: 10px; 
+   align-items: flex-start;
+    margin: 18px 0;
+   font-size: 12px;
+   line-height: 1.5 ;
+   color: var(--muted);
+   cursor: pointer;
+ }
+
+.checkbox-line input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--purple);
+  cursor: pointer;
+}
+
+.checkbox-line input:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.join-button { background: var(--purple);
+   color: white; 
+   padding: 14px 20px;
+   border: none;
+   cursor: pointer;
+   display: block; 
+   font-weight: 700;
+   width: 100%;
+   border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+
+.privacy-note { margin: 18px 0 0; text-align: center; font-size: 11px; color: var(--muted); }
+
+/* TODO 1: Create the TWO-COLUMN desktop layout in .page-layout using CSS Grid. */
+/* TODO 2: Give each panel its rounded corners, background and padding. */
+/* TODO 3: Match the heading, tiny labels and illustration sizes/positions. */
+/* TODO 4: Make .form-grid a 2-column grid with .full-width fields. */
+/* TODO 5: Match the rounded input fields, colors, spacing and focus ring. */
+/* TODO 6: Style .vibe-option as three selectable cards. Use :checked. */
+/* TODO 7: Improve checkbox, button, footer, hover and keyboard focus. */
+/* TODO 8: Use @media (max-width: 900px) and (max-width: 480px)
+           to stack panels and fields on mobile and prevent overflow. */
