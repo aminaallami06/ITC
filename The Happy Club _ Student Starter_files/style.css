@@ -1,7 +1,3 @@
-/* CHALLENGE 04 — THE HAPPY CLUB: STUDENT CSS STARTER
-   Not a finished design. Follow CHALLENGE.md and references/.
-   Practice: form styles, layout, responsive CSS, :focus and :checked.
-*/
 :root {
   --ink: #372A4E;
   --purple: #5945B7;
@@ -18,7 +14,8 @@ body { margin: 0; font-family: "Trebuchet MS", Arial, sans-serif; background: va
 button, input, select { font: inherit; }
 a { color: inherit; }
 
-/* Already supplied: legible, usable one-column starting point */
+
+
 .site-header, .site-footer { 
    max-width: 1200px;
    margin: auto;
@@ -284,13 +281,3 @@ a { color: inherit; }
 
 
 .privacy-note { margin: 18px 0 0; text-align: center; font-size: 11px; color: var(--muted); }
-
-/* TODO 1: Create the TWO-COLUMN desktop layout in .page-layout using CSS Grid. */
-/* TODO 2: Give each panel its rounded corners, background and padding. */
-/* TODO 3: Match the heading, tiny labels and illustration sizes/positions. */
-/* TODO 4: Make .form-grid a 2-column grid with .full-width fields. */
-/* TODO 5: Match the rounded input fields, colors, spacing and focus ring. */
-/* TODO 6: Style .vibe-option as three selectable cards. Use :checked. */
-/* TODO 7: Improve checkbox, button, footer, hover and keyboard focus. */
-/* TODO 8: Use @media (max-width: 900px) and (max-width: 480px)
-           to stack panels and fields on mobile and prevent overflow. */
